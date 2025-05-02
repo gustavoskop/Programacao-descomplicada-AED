@@ -9,8 +9,8 @@ void RetirarVogais(char *str);
 int main()
 {
 
-    int n, i, j = 0;
-    char *str, c;
+    int n;
+    char *str;
 
     printf("digite o tamanho da string: ");
     scanf("%d", &n);
