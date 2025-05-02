@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 void AlocarString(char **frase, int tamanho);
+void RetirarVogais(char *str);
 
 int main()
 {
@@ -20,14 +21,7 @@ int main()
     scanf(" %[^\n]", str);
     getchar();
 
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        c = tolower(str[i]);
-        if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u')
-            str[j++] = str[i];
-    }
-    
-    str[j] = '\0';
+    RetirarVogais(str);
 
     printf("\nstring sem as vogais: %s", str);
 
@@ -38,4 +32,19 @@ void AlocarString(char **frase, int tamanho)
 {
 
     *frase = (char *)malloc((tamanho + 1) * sizeof(char));
+}
+
+void RetirarVogais(char *str)
+{
+    int i, j = 0;
+    char c;
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        c = tolower(str[i]);
+        if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u')
+            str[j++] = str[i];
+    }
+
+    str[j] = '\0';
 }
