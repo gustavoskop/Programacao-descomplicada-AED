@@ -26,6 +26,7 @@ int main()
         if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u')
             str[j++] = str[i];
     }
+    
     str[j] = '\0';
 
     printf("\nstring sem as vogais: %s", str);
